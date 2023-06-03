@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin:400);
+
+// .btn-load-more-container {
+// 	height: auto;
+// 	position: fixed;
+// 	text-align: center;
+// 	width: 100%;
+// 	padding-top: 20px;
+// 	padding-bottom: 20px;
+// 	background-color: rgb(15, 15, 15);
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	bottom: 0;
+// };
+
+.btn-load-more {
+  position: relative;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(211, 211, 211, 0.75);
+  margin: 20px 0;
+}
+
+.btn-load-more:hover,
+.btn-load-more:focus {
+  background: white;
+  border: none;
+}
+
+.is-hidden {
+  display: none;
+}

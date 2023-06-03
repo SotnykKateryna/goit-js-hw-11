@@ -1,0 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin:400);
+
+.search-container {
+  height: auto;
+  position: fixed;
+  top: 0px;
+  text-align: center;
+  width: 100%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(15, 15, 15);
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-form input {
+  width: 300px;
+  height: 40px;
+  border-radius: 20px;
+  border: 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(211, 211, 211, 0.75);
+}
+
+.search-form input:focus {
+  background: white;
+  outline: none;
+}
+
+.search-form button {
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(211, 211, 211, 0.75);
+}
+
+.search-form button:hover,
+.search-form button:focus {
+  background: white;
+  border: none;
+}
