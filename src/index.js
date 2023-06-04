@@ -7,6 +7,7 @@ import { searchQuery } from './js/pixabay';
 const formEl = document.querySelector('form');
 const galleryEl = document.querySelector('.gallery');
 const buttonEl = document.querySelector('.btn-load-more');
+// buttonEl.style.display = 'none';
 
 const lightbox = new SimpleLightbox('.gallery a', {
   CaptionDelay: 250,
@@ -43,6 +44,12 @@ async function searchInformation(event) {
       renderingMarkup(response.hits);
       buttonEl.classList.remove('is-hidden');
     }
+    if (response.totalHits < searchQuery.per_page) {
+      buttonEl.style.display = 'none';
+      Notiflix.Notify.info(
+        "We're sorry, but you've reached the end of search results."
+      );
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -52,12 +59,14 @@ async function onButtonClick() {
   searchQuery.page += 1;
 
   const response = await searchQuery.searchPictures();
-  if (searchQuery.page > response.totalHits / searchQuery.per_page) {
-    buttonEl.classList.add('visually-hidden');
-    Notiflix.Notify.failure(
+
+  if (response.totalHits < searchQuery.page * searchQuery.per_page) {
+    Notiflix.Notify.info(
       "We're sorry, but you've reached the end of search results."
     );
+    buttonEl.classList.add('is-hidden');
   }
+
   renderingMarkup(response.hits);
 
   const { height: cardHeight } = document
