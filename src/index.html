@@ -8,10 +8,30 @@
     <!-- <script type="module" src="./index.js"></script> -->
   </head>
   <body>
-    <include src="./partials/header.html"></include>
+    <!-- <include src="./partials/header.html"></include>
     <include src="./partials/gallery.html"></include>
-    <include src="./partials/btnFooter.html"></include> 
+    <include src="./partials/btnFooter.html"></include>  -->
 
+    <div class="container">
+      <div class="form-bg"> 
+        <form class="search-form" id="search-form">
+          <input
+            type="text"
+            name="searchQuery"
+            autocomplete="off"
+            placeholder="Search images..."
+          />
+          <button class="submit" type="submit">Search</button>
+        </form>
+      </div>
+      <div class="gallery-div">
+        <div class="gallery">
+          <!-- <div class="photo-card"></div> -->
+        </div>
+        <div class="observer"></div>
+        <!-- <button class="load-more is-hidden">Завантажити ще</button> -->
+      </div>
+    </div>
     <script type="module" src="./index.js"></script>
   </body>
 </html>
